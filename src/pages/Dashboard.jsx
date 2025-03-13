@@ -51,11 +51,14 @@ const Dashboard = () => {
     }
   };
 
+<<<<<<< HEAD
   const filteredCustomers = customers.filter(customer =>
     customer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     customer.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+=======
+>>>>>>> 0398614023e3a3b404bd120f71525c0336d14c91
   return (
     <Container sx={{ padding: 2 }}>
       <Typography variant="h4" sx={{ my: 3, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -75,7 +78,11 @@ const Dashboard = () => {
         Add Customer
       </Button>
 
+<<<<<<< HEAD
       <Table sx={{ minWidth: 450, overflowX: "auto" }}>
+=======
+      <Table sx={{ minWidth: 650, overflowX: "auto" }}>
+>>>>>>> 0398614023e3a3b404bd120f71525c0336d14c91
         <TableHead>
           <TableRow>
           {!isMobile && <TableCell>Name</TableCell>}
@@ -88,7 +95,11 @@ const Dashboard = () => {
           </TableRow>
         </TableHead>
         <TableBody>
+<<<<<<< HEAD
           {filteredCustomers.length > 0 ? filteredCustomers.map((customer) => (
+=======
+          {customers.length > 0 ? customers.map((customer) => (
+>>>>>>> 0398614023e3a3b404bd120f71525c0336d14c91
             <TableRow key={customer._id}>
               {!isMobile && <TableCell>{customer.name}</TableCell>}
               <TableCell>{customer.email}</TableCell>
