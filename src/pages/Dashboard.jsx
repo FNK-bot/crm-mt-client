@@ -130,12 +130,13 @@ const Dashboard = () => {
       </Table>
 
       {/* Add/Edit Customer Dialog */}
-      <AddEditCustomerDialog open={openCustomerDialog} onClose={() => setOpenCustomerDialog(false)} customerData={customerData} handleInputChange={(e) => setCustomerData({ ...customerData, [e.target.name]: e.target.value })} handleSubmit={() => {
+      <AddEditCustomerDialog open={openCustomerDialog} onClose={() => {setOpenCustomerDialog(false);setEditingId(false);}} customerData={customerData} handleInputChange={(e) => setCustomerData({ ...customerData, [e.target.name]: e.target.value })} handleSubmit={() => {
         if (editingId) {
           updateCustomer(editingId, customerData).then(() => {
             toast.success("Customer updated successfully");
             setOpenCustomerDialog(false);
             fetchCustomers();
+            setEditingId(false);
           }).catch(err => toast.error(err.msg));
         } else {
           addCustomer(customerData).then(() => {

@@ -7,7 +7,7 @@ const AddEditCustomerDialog = ({ open, onClose, customerData, handleInputChange,
       <DialogTitle>{editingId ? "Edit Customer" : "Add Customer"}</DialogTitle>
       <DialogContent>
         <TextField fullWidth label="Name" name="name" value={customerData.name} onChange={handleInputChange} sx={{ mb: 2 }} />
-        <TextField fullWidth label="Email" name="email" type="email" value={customerData.email} onChange={handleInputChange} sx={{ mb: 2 }} />
+        <TextField fullWidth label="Email" name="email" type="email" value={customerData.email}  sx={{ mb: 2 }} disabled={editingId}/>
         <TextField fullWidth label="Phone" name="phone" value={customerData.phone} onChange={handleInputChange} sx={{ mb: 2 }} />
         <TextField fullWidth label="Company" name="company" value={customerData.company} onChange={handleInputChange} sx={{ mb: 2 }} />
       </DialogContent>
